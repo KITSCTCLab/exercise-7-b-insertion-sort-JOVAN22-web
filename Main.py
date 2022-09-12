@@ -2,15 +2,14 @@ from typing import List
 
 def insertionSort(array) -> List[int]:
   # Write your code here
-  for i in range(1,len(arr)):
-    key=arr[i]
-    j=i-1
-    while j>=0 and key < arr[j]:
-      arr[j+1]=arr[j]
-      j-=1
-    arr[j+1]=key
-  
-
+  for x in range(1,len(array)):
+    selection = x
+    for y in range(x-1,-1,-1):
+      if (array[y] > array[selection]):
+        array[y],array[selection] = array[selection],array[y]
+        selection -=1
+  return array
+      
 # data = [9, 5, 1, 4, 3]
 input_data = input()
 data = []
